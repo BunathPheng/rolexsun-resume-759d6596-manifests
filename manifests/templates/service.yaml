@@ -1,0 +1,16 @@
+---
+# Source: helm for kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: rolexsun-resume-759d6596          # Service name
+  labels:
+    app: rolexsun-resume-759d6596
+spec:
+  type: ClusterIP   # Service type (ClusterIP, NodePort, LoadBalancer)
+  selector:
+    app: rolexsun-resume-759d6596         # Matches Deployment labels
+  ports:
+    - protocol: TCP
+      port: 3000         # Service port
+      targetPort: 3000  # Target container port
